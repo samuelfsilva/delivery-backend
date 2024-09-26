@@ -8,7 +8,7 @@ export class Complement {
   id: string;
 
   @ManyToOne(() => Group, (group) => group.complements)
-  @JoinColumn({ name: 'group_id' })
+  @JoinColumn({ name: 'group_id' }) 
   groups: Group;
 
   @Column()
