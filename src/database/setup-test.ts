@@ -1,26 +1,14 @@
 import "reflect-metadata"
-import path from 'path';
-import { DataSource } from 'typeorm';
 import { afterAll, beforeAll } from 'vitest';
-
-let dataSource: DataSource;
-const entities = path.join(__dirname, '../entities/*.ts');
+import { AppDataSource } from "./data-source";
 
 beforeAll(async () => {
-  dataSource = new DataSource({
-    type: "sqlite",
-    database: "database-test.sqlite",
-    synchronize: true,
-    logging: true,
-    entities: [entities],
-    subscribers: [],
-    migrations: [],
-  });
-  await dataSource.initialize();
+  await AppDataSource.initialize();
 });
 
 afterAll(async () => {
-  await dataSource.destroy();
+  if (AppDataSource.isInitialized) {
+    await AppDataSource.destroy();
+  }
 });
 
-export { dataSource };

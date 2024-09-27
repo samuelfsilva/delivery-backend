@@ -11,13 +11,13 @@ export class Complement {
   @JoinColumn({ name: 'group_id' }) 
   groups: Group;
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   description: string;
 
-  @Column()
+  @Column({ type: 'numeric', nullable: false })
   weight: number;
 
-  @Column()
+  @Column({ type: 'boolean', nullable: false })
   isActive: boolean;
 
   @ManyToMany(() => Product, (product) => product.complements)

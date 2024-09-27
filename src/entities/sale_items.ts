@@ -18,7 +18,7 @@ export class SaleItem {
   @Column({ type: 'varchar', nullable: true })
   details: string | null;
 
-  @Column()
+  @Column({ type: 'numeric', nullable: false })
   price: number;
 
   @Column({ type: 'numeric', nullable: true })

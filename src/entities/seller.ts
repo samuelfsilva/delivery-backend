@@ -9,12 +9,12 @@ export class Seller {
   @OneToMany(() => Store, (store) => store.seller)
   store: Store;
 
-  @Column()
+  @Column({ type: 'datetime', nullable: false })
   createdAt: Date;
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   documentNumber: string;
 
-  @Column()
+  @Column({ type: 'boolean', nullable: false })
   isActive: boolean;
 }

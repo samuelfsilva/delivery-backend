@@ -2,11 +2,12 @@
   "name": "delivery-backend",
   "version": "1.0.0",
   "main": "src/index.ts",
+  "type": "module",
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/index.js",
+    "start": " set NODE_ENV=HOMOLOGATION && node dist/index.js",
     "dev": "nodemon src/index.ts",
-    "test": "vitest"
+    "test": "set NODE_ENV=TEST && vitest"
   },
   "keywords": [],
   "author": "",
