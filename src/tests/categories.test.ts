@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { Categories } from '../categories';
-import { AppDataSource } from '../../database/data-source';
+import { Categories } from '../entities/categories';
+import { AppDataSource } from '../database/data-source';
 
 describe('Category Entity', () => {
   it('should create a new category', async () => {

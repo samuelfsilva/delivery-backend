@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "npx tsc",
-    "start": " set NODE_ENV=HOMOLOGATION && node dist/index.js",
-    "dev": "nodemon src/index.ts",
+    "start": "set NODE_ENV=HOMOLOGATION && node dist/index.js",
+    "dev": "set NODE_ENV=HOMOLOGATION && nodemon src/index.ts",
     "test": "set NODE_ENV=TEST && vitest"
   },
   "keywords": [],
