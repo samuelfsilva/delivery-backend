@@ -42,8 +42,8 @@ export class Product {
   @Column({ type: 'numeric', nullable: false })
   price: number;
 
-  @Column({ type: 'numeric', nullable: false })
-  previousPrice: number;
+  @Column({ type: 'numeric', nullable: true })
+  previousPrice: number | null;
 
   @Column({ type: 'boolean', nullable: false })
   isActive: boolean;
