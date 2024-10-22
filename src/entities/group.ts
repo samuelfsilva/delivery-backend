@@ -13,6 +13,6 @@ export class Group {
   @OneToMany(() => Complement, (complement) => complement.groups)
   complements: Complement[];
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   description: string;
 }

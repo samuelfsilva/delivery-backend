@@ -13,7 +13,7 @@ export class Sale {
   @OneToMany(() => SaleItem, (saleItem) => saleItem.sale)
   items: SaleItem[];
 
-  @Column()
+  @Column({ type: 'datetime', nullable: false })
   orderDate: Date;
 
   @Column({ type: 'datetime', nullable: true })
@@ -22,6 +22,6 @@ export class Sale {
   @Column({ type: 'datetime', nullable: true })
   actualDeliveryDate: Date | null;
 
-  @Column()
+  @Column({ type: 'boolean', nullable: false })
   isActive: boolean;
 }

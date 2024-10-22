@@ -22,27 +22,27 @@ export class User {
   @OneToMany(() => Sale, (sale) => sale.user)
   sales: Sale[];
 
-  @Column()
+  @Column({ type: 'datetime', nullable: false })
   createdAt: Date;
 
-  @Column()
+  @Column({ type: 'datetime', nullable: false })
   updatedAt: Date;
 
-  @Column()
+  @Column({ type: 'datetime', nullable: false })
   birthdate: Date;
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   email: string;
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   firstName: string;
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   lastName: string;
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   password: string;
 
-  @Column()
+  @Column({ type: 'boolean', nullable: false })
   isActive: boolean;
 }
