@@ -26,19 +26,19 @@ export class Address {
   @Column({ type: 'varchar', nullable: true })
   description: string | null;
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   postalCode: string;
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   state: string;
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   city: string;
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   street: string;
 
-  @Column()
+  @Column({ type: 'numeric', nullable: false })
   number: number;
 
   @Column({ type: 'varchar', nullable: true })

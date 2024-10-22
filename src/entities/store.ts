@@ -23,15 +23,15 @@ export class Store {
   @OneToMany(() => Product, (product) => product.store)
   products: Product[];
 
-  @Column()
+  @Column({ type: 'datetime', nullable: false })
   createdAt: Date;
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   storeName: string;
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   storeDescription: string;
 
-  @Column()
+  @Column({ type: 'boolean', nullable: false })
   isActive: boolean;
 }

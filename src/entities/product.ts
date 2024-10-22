@@ -33,18 +33,18 @@ export class Product {
   @OneToMany(() => SaleItem, (saleItem) => saleItem.product)
   saleItems: SaleItem[];
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   description: string;
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   details: string;
 
-  @Column()
+  @Column({ type: 'numeric', nullable: false })
   price: number;
 
-  @Column()
-  previousPrice: number;
+  @Column({ type: 'numeric', nullable: true })
+  previousPrice: number | null;
 
-  @Column()
+  @Column({ type: 'boolean', nullable: false })
   isActive: boolean;
 }

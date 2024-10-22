@@ -8,16 +8,16 @@ export class Complement {
   id: string;
 
   @ManyToOne(() => Group, (group) => group.complements)
-  @JoinColumn({ name: 'group_id' })
+  @JoinColumn({ name: 'group_id' }) 
   groups: Group;
 
-  @Column()
+  @Column({ type: 'varchar', nullable: false })
   description: string;
 
-  @Column()
+  @Column({ type: 'numeric', nullable: false })
   weight: number;
 
-  @Column()
+  @Column({ type: 'boolean', nullable: false })
   isActive: boolean;
 
   @ManyToMany(() => Product, (product) => product.complements)
