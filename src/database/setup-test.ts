@@ -8,6 +8,11 @@ beforeAll(async () => {
   }
   await AppDataSource.initialize();
   console.log('Database inicialized');
+  if (process.env.NODE_ENV?.trim().toUpperCase() === 'TEST') {
+    console.log('Test environment');
+  } else {
+    console.log('Homologation environment');
+  }
 });
 
 afterEach(() => {

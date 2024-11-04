@@ -14,7 +14,8 @@ import { User } from "../entities/user";
 
 export const AppDataSource = new DataSource({
     type: "sqlite",
-    database: process.env.NODE_ENV === "TEST" ? "database-test.sqlite" : "database.sqlite",
+    database: process.env.NODE_ENV?.trim().toUpperCase() === 'TEST' ? 
+        "database-test.sqlite" : "database.sqlite",
     synchronize: true,
     logging: true,
     entities: [Address, Categories, Complement, Group, Product, SaleItem, Sale, Seller, Store, User],

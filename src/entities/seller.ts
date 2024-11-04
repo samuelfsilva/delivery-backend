@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, OneToOne, JoinColumn } from 'typeorm';
 import { Store } from './store';
+import { User } from './user';
 
 @Entity()
 export class Seller {
@@ -8,6 +9,10 @@ export class Seller {
   
   @OneToMany(() => Store, (store) => store.seller)
   store: Store;
+
+  @OneToOne(() => User)
+  @JoinColumn({ name: 'user_id' })
+  user: User;
 
   @Column({ type: 'datetime', nullable: false })
   createdAt: Date;

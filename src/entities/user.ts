@@ -8,7 +8,7 @@ export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @OneToOne(() => Seller)
+  @OneToOne(() => Seller, (seller) => seller.user)
   seller: Seller;
 
   @ManyToMany(() => Address, (address) => address.users)
